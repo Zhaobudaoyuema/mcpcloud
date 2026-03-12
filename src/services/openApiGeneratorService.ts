@@ -268,11 +268,11 @@ export async function generateOpenAPISpec(
       version: options.version || '1.0.0',
       contact: {
         name: 'MCPHub',
-        url: 'https://github.com/agentn613/mcpcloud',
+        url: 'https://github.com/Zhaobudaoyuema/mcpcloud',
       },
       license: {
         name: 'ISC',
-        url: 'https://github.com/agentn613/mcpcloud/blob/main/LICENSE',
+        url: 'https://github.com/Zhaobudaoyuema/mcpcloud/blob/main/LICENSE',
       },
     },
     servers: [

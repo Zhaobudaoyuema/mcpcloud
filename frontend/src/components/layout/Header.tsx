@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { BookOpen } from 'lucide-react';
 import LanguageSwitch from '@/components/ui/LanguageSwitch';
 import GitHubIcon from '@/components/icons/GitHubIcon';
 
@@ -56,16 +55,6 @@ const Header: React.FC<HeaderProps> = ({ onToggleSidebar }) => {
             aria-label="GitHub Repository"
           >
             <GitHubIcon className="h-5 w-5" />
-          </a>
-
-          <a
-            href="https://docs.mcphubx.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-warm-btn p-2 text-warm-warmGray hover:bg-warm-beige hover:text-warm-ink warm-transition"
-            aria-label="Documentation"
-          >
-            <BookOpen className="h-5 w-5" />
           </a>
 
           <LanguageSwitch />

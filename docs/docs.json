@@ -153,22 +153,16 @@
     "dark": "/logo/dark.svg"
   },
   "navbar": {
-    "links": [
-      {
-        "label": "Demo",
-        "href": "https://demo.mcphubx.com"
-      }
-    ],
+    "links": [],
     "primary": {
       "type": "button",
       "label": "Get Started",
-      "href": "https://docs.mcphubx.com/quickstart"
+      "href": "/quickstart"
     }
   },
   "footer": {
     "socials": {
-      "github": "https://github.com/agentn613/mcpcloud",
-      "discord": "https://discord.gg/qMKNsn5Q"
+      "github": "https://github.com/Zhaobudaoyuema/mcpcloud"
     }
   }
 }
