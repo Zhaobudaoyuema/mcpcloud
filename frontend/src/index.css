@@ -1,0 +1,310 @@
+/* Use project's custom Tailwind import */
+@import 'tailwindcss';
+
+/* Warm UI theme (Tailwind v4 @theme – cream/terracotta palette) */
+@theme {
+  --color-warm-caramel: #8b5a2b;
+  --color-warm-terracotta: #d4a574;
+  --color-warm-beige: #f5f1e8;
+  --color-warm-cream: #fdfbf7;
+  --color-warm-camel: #c4a77d;
+  --color-warm-gold: #b8956a;
+  --color-warm-warmGray: #9a8b7a;
+  --color-warm-ink: #3d3d3d;
+  --color-warm-rust: #a0522d;
+  --radius-warm-card: 20px;
+  --radius-warm-btn: 12px;
+  --radius-warm-input: 8px;
+  --radius-warm-pill: 9999px;
+  --shadow-warm-sm: 0 4px 20px rgba(139, 90, 43, 0.08);
+  --shadow-warm-md: 0 8px 30px rgba(139, 90, 43, 0.12);
+  --shadow-warm-lg: 0 12px 40px rgba(139, 90, 43, 0.16);
+  --font-serif: "Playfair Display", "Source Han Serif", serif;
+}
+
+/* --- Base --- */
+body {
+  margin: 0;
+  background-color: #f5f1e8;
+  color: var(--color-warm-ink);
+  font-family:
+    'Inter', 'PingFang SC', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+    'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
+    'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Warm animation helpers --- */
+.warm-transition {
+  transition: all 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.warm-card-hover:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-warm-md);
+}
+
+.warm-btn-hover:hover {
+  transform: scale(1.02);
+  box-shadow: var(--shadow-warm-md);
+}
+
+@keyframes warm-pulse {
+  0%, 100% { opacity: 0.5; background-color: #f5f1e8; }
+  50%       { opacity: 1;   background-color: #d4a574; }
+}
+.warm-loading {
+  animation: warm-pulse 1.5s ease-in-out infinite;
+}
+
+/* --- Page card (MCP server cards, tool cards, etc.) --- */
+.page-card {
+  border-radius: var(--radius-warm-card);
+  background-color: var(--color-warm-cream);
+  border: 1px solid rgba(196, 167, 125, 0.45);
+  box-shadow: var(--shadow-warm-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.page-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-warm-md);
+}
+
+/* --- Dashboard card variant --- */
+.dashboard-card {
+  transition: all 0.3s ease;
+  border-radius: var(--radius-warm-card);
+  background-color: var(--color-warm-cream);
+  border: 1px solid rgba(196, 167, 125, 0.35);
+  box-shadow: var(--shadow-warm-sm);
+}
+
+.dashboard-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-warm-md);
+}
+
+/* --- Buttons --- */
+.btn-primary {
+  background-color: var(--color-warm-caramel) !important;
+  color: var(--color-warm-cream) !important;
+  border: none;
+  border-radius: var(--radius-warm-btn);
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+  font-weight: 500;
+  box-shadow: var(--shadow-warm-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: var(--color-warm-terracotta) !important;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-warm-md);
+}
+
+.btn-secondary {
+  background-color: var(--color-warm-cream) !important;
+  color: var(--color-warm-ink) !important;
+  border: 1px solid rgba(196, 167, 125, 0.65) !important;
+  border-radius: var(--radius-warm-btn);
+  font-size: 0.875rem;
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-warm-beige) !important;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-warm-sm);
+}
+
+.btn-warning {
+  background-color: rgba(212, 165, 116, 0.15) !important;
+  color: var(--color-warm-rust) !important;
+  border-radius: var(--radius-warm-btn);
+  border: 1px solid rgba(212, 165, 116, 0.7);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-warning:hover {
+  background-color: rgba(212, 165, 116, 0.28) !important;
+  color: var(--color-warm-rust) !important;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-warm-sm);
+}
+
+.btn-danger {
+  background-color: rgba(248, 113, 113, 0.1) !important;
+  color: #b91c1c !important;
+  border-radius: var(--radius-warm-btn);
+  border: 1px solid rgba(248, 113, 113, 0.6);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.btn-danger:hover {
+  background-color: rgba(248, 113, 113, 0.2) !important;
+  color: #7f1d1d !important;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-warm-sm);
+}
+
+/* --- Form inputs --- */
+.form-input {
+  background-color: var(--color-warm-cream) !important;
+  border-color: rgba(196, 167, 125, 0.65) !important;
+  color: var(--color-warm-ink) !important;
+  border-radius: var(--radius-warm-input);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.form-input:focus {
+  border-color: var(--color-warm-caramel) !important;
+  box-shadow: 0 0 0 3px rgba(139, 90, 43, 0.12) !important;
+  outline: none;
+}
+
+.form-input::placeholder {
+  color: rgba(154, 139, 122, 0.6);
+}
+
+/* --- Status badges --- */
+.status-badge-online {
+  background-color: rgba(220, 252, 231, 0.9) !important;
+  color: #166534 !important;
+  border: 1px solid rgba(134, 239, 172, 0.6);
+}
+
+.status-badge-offline {
+  background-color: rgba(249, 246, 240, 0.9) !important;
+  color: var(--color-warm-warmGray) !important;
+  border: 1px solid rgba(196, 167, 125, 0.4);
+}
+
+.status-badge-connecting {
+  background-color: rgba(254, 249, 195, 0.9) !important;
+  color: #92400e !important;
+  border: 1px solid rgba(252, 211, 77, 0.6);
+}
+
+.status-badge-oauth-required {
+  background-color: rgba(245, 243, 255, 0.9) !important;
+  color: #6b21a8 !important;
+  border: 1px solid rgba(196, 181, 253, 0.6);
+}
+
+/* --- Labels --- */
+.label-primary {
+  background-color: rgba(212, 165, 116, 0.14) !important;
+  color: var(--color-warm-caramel) !important;
+}
+
+.label-secondary {
+  background-color: rgba(16, 185, 129, 0.12) !important;
+  color: rgb(5, 122, 85) !important;
+}
+
+/* --- Loading container --- */
+.loading-container {
+  border-radius: var(--radius-warm-card);
+  backdrop-filter: blur(8px);
+  background-color: rgba(253, 251, 247, 0.85);
+  border: 1px solid rgba(196, 167, 125, 0.3);
+}
+
+/* --- Empty state --- */
+.empty-state {
+  border-radius: var(--radius-warm-card);
+  background-color: var(--color-warm-cream);
+  border: 1px solid rgba(196, 167, 125, 0.4);
+  text-align: center;
+  padding: 3rem 2rem;
+}
+
+.empty-state p {
+  color: var(--color-warm-warmGray);
+}
+
+/* --- Error box --- */
+.error-box {
+  background-color: rgba(254, 242, 242, 0.9) !important;
+  border-color: rgba(252, 165, 165, 0.6) !important;
+  border-radius: var(--radius-warm-card);
+}
+
+.error-box h3 { color: #991b1b; }
+.error-box p  { color: var(--color-warm-warmGray); }
+
+/* --- Login --- */
+.login-container {
+  background-color: var(--color-warm-beige) !important;
+}
+
+.login-card {
+  background-color: var(--color-warm-cream);
+  border-radius: var(--radius-warm-card);
+  border: 1px solid rgba(196, 167, 125, 0.4);
+  box-shadow: var(--shadow-warm-md);
+}
+
+/* --- Icon / status helpers --- */
+.bg-custom-blue  { background-color: var(--color-warm-caramel); }
+.text-custom-white { color: #ffffff; }
+.text-status-red   { color: #991b1b; }
+.border-red        { border-color: rgba(154, 82, 82, 0.5); }
+
+/* --- Progress bars --- */
+.progress-bar-online {
+  background: linear-gradient(90deg, rgba(76, 175, 80, 0.7), rgba(129, 199, 132, 0.5));
+}
+.progress-bar-offline {
+  background: linear-gradient(90deg, rgba(244, 67, 54, 0.7), rgba(239, 154, 154, 0.5));
+}
+.progress-bar-connecting {
+  background: linear-gradient(90deg, rgba(255, 193, 7, 0.7), rgba(255, 213, 79, 0.5));
+}
+
+/* --- Table row hover --- */
+tbody tr:hover {
+  background-color: rgba(245, 241, 232, 0.8) !important;
+  transition: background-color 0.2s ease;
+}
+
+/* --- External links --- */
+.external-link {
+  color: var(--color-warm-caramel) !important;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.external-link:hover {
+  color: var(--color-warm-rust) !important;
+  border-bottom-color: var(--color-warm-rust);
+}
+
+/* --- Global warm overrides for legacy Tailwind blue utilities --- */
+.bg-blue-600, .bg-blue-500 {
+  background-color: var(--color-warm-caramel) !important;
+}
+
+.bg-blue-100, .bg-blue-50 {
+  background-color: rgba(212, 165, 116, 0.1) !important;
+}
+
+.text-blue-800, .text-blue-700,
+.text-blue-600, .text-blue-500, .text-blue-400 {
+  color: var(--color-warm-caramel) !important;
+}
+
+.border-blue-500, .border-blue-400, .border-blue-300 {
+  border-color: rgba(196, 167, 125, 0.9) !important;
+}
+
+/* --- Icon container --- */
+.icon-container { transition: all 0.3s ease; }
+.icon-container:hover { transform: scale(1.05); filter: brightness(1.1); }
